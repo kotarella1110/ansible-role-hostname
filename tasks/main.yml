@@ -4,7 +4,7 @@
 - name: Update /etc/hosts
   lineinfile:
     dest: /etc/hosts
-    regexp: "^127\.0\.1\.1(.*)"
+    regexp: "^127.0.1.1(.*)"
     line: "127.0.1.1 {% if ansible_fqdn != hostname_fqdn %}{{ hostname_fqdn }} {% endif %}{{ hostname_name }}"
     state: present
 
